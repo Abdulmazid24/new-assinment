@@ -1,0 +1,125 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.happy {
+  color: white;
+  background-image: url('images/Banner Image.png');
+  background-repeat: no-repeat;
+  width: 1150px;
+  height: 600px;
+  text-align: center;
+  font-size: 35px;
+  padding: 100px 100px;
+}
+
+.offer {
+  color: rgb(244, 9, 9);
+  text-align: center;
+}
+.discount {
+  color: red;
+  text-align: center;
+}
+.catagori {
+  text-align: center;
+}
+.happy-new-year {
+  width: 250px;
+  height: 150px;
+  margin-left: ;
+}
+.section1 {
+  text-align: center;
+  white-space: 5px;
+  margin-left: 20px;
+  width: 650px;
+  height: 350px;
+  padding: 0 px;
+  margin: 0px;
+  background-color: beige;
+}
+.party {
+  color: white;
+  background-image: url('images/Vectorrr.png');
+
+  width: 1150px;
+
+  height: 500px;
+}
+.welcome {
+  font-size: 70px;
+  .morgan {
+    font-size: 40px;
+  }
+}
+.wish {
+  padding-top: 200px;
+  padding-left: 50px;
+}
+.section2 {
+  background-color: whitesmoke;
+  font-size: 20px;
+  text-align: right;
+}
+.place {
+  color: red;
+}
+.date {
+  color: red;
+}
+.time {
+  color: red;
+}
+.join {
+  font-weight: bolder;
+  color: red;
+}
+
+.section3 {
+  background-color: azure;
+}
+.best {
+  color: red;
+}
+
+.section4 {
+  text-align: center;
+  background-color: ;
+}
+.password {
+  border: 1px solid black;
+  border-radius: 10px;
+}
+.subscribe {
+  color: white;
+  background-color: red;
+  border-top: 1px solid black;
+  border-right: 1px solid;
+  border-bottom: 1px solid black;
+
+  border-radius: 10px;
+}
+.footer {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.media {
+  text-align: center;
+}
+.two {
+  text-decoration: none;
+}
+.copy {
+  display: flex;
+  gaps: 50px;
+  justify-content: space-between;
+}
+.nine {
+  display: flex;
+  list-style: none;
+}
+.one {
+  text-decoration: none;
+}
