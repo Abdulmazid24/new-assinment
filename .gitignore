@@ -89,6 +89,10 @@ tmp/
 temp/
 *.tmp
 
+# Uploads (temporary files)
+server/uploads/
+uploads/
+
 # Optional npm cache directory
 .npm
 

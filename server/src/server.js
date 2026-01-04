@@ -5,12 +5,13 @@ import mongoSanitize from 'express-mongo-sanitize';
 import dotenv from 'dotenv';
 import connectDB from './config/database.js';
 import authRoutes from './routes/auth.js';
+import trainerRoutes from './routes/trainer.js';
 import { globalRateLimit } from './middlewares/rateLimit.js';
 
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.NODE_ENV || 5000;
 
 // Connect to MongoDB
 connectDB();
@@ -39,6 +40,7 @@ app.get('/api/health', (req, res) => {
         environment: process.env.NODE_ENV || 'development',
         features: {
             authentication: true,
+            trainerProfiles: true,
             rateLimit: true,
             gdprCompliance: true,
         },
@@ -56,6 +58,7 @@ app.get('/', (req, res) => {
 
 // API Routes
 app.use('/api/auth', authRoutes);
+app.use('/api/trainers', trainerRoutes);
 
 // Error Handler
 app.use((err, req, res, next) => {
@@ -73,5 +76,6 @@ app.listen(PORT, () => {
     console.log(`📍 Environment: ${process.env.NODE_ENV || 'development'}`);
     console.log(`🌐 Health check: http://localhost:${PORT}/api/health`);
     console.log(`🔐 Authentication: Enabled`);
+    console.log(`👔 Trainer Profiles: Enabled`);
     console.log(`🛡️  Rate Limiting: Active`);
 });
