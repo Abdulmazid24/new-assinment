@@ -1,8 +1,7 @@
 import { useState } from 'react';
 
 function AdminDashboard() {
-    // @ts-ignore - setStats will be used when API is integrated
-    const [stats, setStats] = useState({
+    const [stats] = useState({
         totalUsers: 0,
         totalTrainers: 0,
         pendingVerifications: 0,

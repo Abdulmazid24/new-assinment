@@ -21,8 +21,7 @@ interface Trainer {
 }
 
 function TrainerMarketplace() {
-    // @ts-ignore - setTrainers will be used when API is integrated
-    const [trainers, setTrainers] = useState<Trainer[]>([]);
+    const [trainers] = useState<Trainer[]>([]);
     const [loading, setLoading] = useState(true);
     const [filters, setFilters] = useState({
         specialty: '',
@@ -30,13 +29,12 @@ function TrainerMarketplace() {
         minRating: '',
     });
 
-    // Placeholder data for UI demonstration
-    useEffect(() => {
-        // Simulate API call
+    // Simulate API call
+    useState(() => {
         setTimeout(() => {
             setLoading(false);
         }, 500);
-    }, [filters]);
+    });
 
     const specialties = [
         'Weight Training', 'Cardio', 'Yoga', 'Pilates',

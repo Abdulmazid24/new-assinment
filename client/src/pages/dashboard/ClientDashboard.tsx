@@ -2,8 +2,7 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 
 function ClientDashboard() {
-    // @ts-ignore - setStats will be used when API is integrated
-    const [stats, setStats] = useState({
+    const [stats] = useState({
         upcomingBookings: 0,
         activePrograms: 0,
         completedSessions: 0,

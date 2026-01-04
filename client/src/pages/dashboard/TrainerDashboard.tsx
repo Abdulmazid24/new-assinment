@@ -1,8 +1,7 @@
 import { useState } from 'react';
 
 function TrainerDashboard() {
-    // @ts-ignore - setStats will be used when API is integrated
-    const [stats, setStats] = useState({
+    const [stats] = useState({
         totalEarnings: 0,
         upcomingBookings: 0,
         activeClients: 0,
