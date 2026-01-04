@@ -8,6 +8,7 @@ import authRoutes from './routes/auth.js';
 import trainerRoutes from './routes/trainer.js';
 import bookingRoutes from './routes/booking.js';
 import programRoutes from './routes/program.js';
+import gdprRoutes from './routes/gdpr.js';
 import { globalRateLimit } from './middlewares/rateLimit.js';
 
 dotenv.config();
@@ -46,8 +47,8 @@ app.get('/api/health', (req, res) => {
             bookings: true,
             programs: true,
             payments: true,
+            gdpr: true,
             rateLimit: true,
-            gdprCompliance: true,
         },
     });
 });
@@ -66,6 +67,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/trainers', trainerRoutes);
 app.use('/api/bookings', bookingRoutes);
 app.use('/api/programs', programRoutes);
+app.use('/api/gdpr', gdprRoutes);
 
 // Error Handler
 app.use((err, req, res, next) => {
@@ -87,5 +89,6 @@ app.listen(PORT, () => {
     console.log(`📅 Bookings: Enabled`);
     console.log(`💪 Programs: Enabled`);
     console.log(`💳 Payments (Stripe): Enabled`);
+    console.log(`🔒 GDPR Compliance: Enabled`);
     console.log(`🛡️  Rate Limiting: Active`);
 });
