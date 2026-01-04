@@ -1,8 +1,6 @@
 import Stripe from 'stripe';
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
-    apiVersion: '2024-12-18.acacia', // Latest version with SCA support
-});
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
 // Create Stripe Checkout Session for booking payment
 export const createBookingCheckout = async ({ amount, currency, bookingId, clientEmail, trainerName }) => {
