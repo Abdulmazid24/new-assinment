@@ -31,28 +31,14 @@
 
 ```bash
 # Clone repository
-git clone https://github.com/Abdulmazid24/fittrain-eu.git
+git clone https://github.com/Abdulmazid24/new-assinment.git
 cd fittrain-eu
 
 # Install dependencies
 cd client && npm install
 cd ../server && npm install
 
-# Setup environment (see below)
-```
-
-### Environment Setup
-
-**Backend (.env):**
-```bash
-MONGO_URI=your_mongodb_connection_string
-JWT_SECRET=your_secret_key
-STRIPE_SECRET_KEY=your_stripe_key
-```
-
-**Frontend (.env.local):**
-```bash
-VITE_API_URL=http://localhost:5000
+# Setup environment (see .env.example in server/)
 ```
 
 ### Run Locally
@@ -76,22 +62,28 @@ Visit: `http://localhost:3000`
 ### Frontend
 - **React 18.3** - UI library
 - **Vite 5** - Build tool
-- **Tailwind CSS v4** - Styling
-- **TanStack Query v5** - Data fetching
+- **Tailwind CSS v4** - Styling with custom design tokens
 - **React Router** - Navigation
+- **TypeScript** - Type safety
 
 ### Backend
 - **Node.js 20** - Runtime
 - **Express 4.18** - Web framework
 - **MongoDB** - Database
-- **Upstash Redis** - Caching
-- **Stripe** - Payments
+- **JWT** - Authentication
+- **Bcrypt** - Password hashing
+- **Zod** - Input validation
+
+### Services & Integrations
+- **Upstash Redis** - Rate limiting & caching
+- **Cloudinary** - Image uploads
+- **Stripe** - Payment processing
+- **Nodemailer** - Email service
 
 ### Deployment (100% Free Tier)
 - **Vercel** - Frontend hosting
 - **Render** - Backend hosting
 - **MongoDB Atlas** - Database (512MB free)
-- **Cloudinary** - Image storage
 
 ---
 
@@ -99,11 +91,38 @@ Visit: `http://localhost:3000`
 
 ```
 fittrain-eu/
-├── client/         # React frontend
-├── server/         # Express backend
-├── docs/           # Documentation (private)
-└── README.md       # This file
+├── client/                # React frontend
+│   ├── src/
+│   │   ├── components/   # Reusable components
+│   │   ├── pages/        # Page components
+│   │   └── styles/       # Tailwind CSS
+├── server/               # Express backend
+│   ├── src/
+│   │   ├── models/       # Mongoose models
+│   │   ├── controllers/  # Route controllers
+│   │   ├── routes/       # API routes
+│   │   ├── middlewares/  # Auth, rate limit
+│   │   └── config/       # DB, Cloudinary
+├── docs/                 # Documentation (private)
+└── README.md            # This file
 ```
+
+---
+
+## 🔐 API Endpoints
+
+### Authentication
+- `POST /api/auth/register` - User registration
+- `POST /api/auth/login` - User login
+- `POST /api/auth/logout` - Logout
+- `GET /api/auth/me` - Get current user
+
+### Trainers
+- `GET /api/trainers` - List verified trainers (public)
+- `GET /api/trainers/:id` - Get trainer details
+- `POST /api/trainers` - Create profile (trainer only)
+- `POST /api/trainers/certification` - Upload certification
+- `PUT /api/trainers/:id/verify` - Verify trainer (admin)
 
 ---
 
@@ -119,19 +138,36 @@ MIT License - see [LICENSE](LICENSE) file
 
 ---
 
-## 🔗 Links
-
-- **Live Demo:** Coming soon
-- **Documentation:** See `docs/` folder (local only)
-
----
-
 ## 📊 Development Status
 
-- [x] Phase 1: Project Setup
-- [ ] Phase 2: Authentication
-- [ ] Phase 3: Trainer Profiles
-- [ ] Phase 4: Public Website
-- [ ] Phase 5-12: In Progress...
+- [x] **Phase 1: Project Setup** ✅
+  - Vite + React + TypeScript
+  - Tailwind CSS v4 
+  - Express backend
 
-**Last Updated:** January 2026
+- [x] **Phase 2: Authentication** ✅  
+  - JWT auth with refresh tokens
+  - RBAC (Admin/Trainer/Client)
+  - Rate limiting
+  - GDPR compliance
+
+- [x] **Phase 3: Trainer Profiles** ✅
+  - TrainerProfile model
+  - Cloudinary integration
+  - Certification upload
+  - Admin verification
+  - Search & filters
+
+- [x] **Phase 4: Public Website** ✅
+  - Landing page
+  - Trainer marketplace
+  - Auth pages
+  - Responsive layout
+
+- [ ] Phase 5: Booking & Scheduling
+- [ ] Phase 6: Training Programs
+- [ ] Phase 7: Payment System
+- [ ] Phase 8-12: Coming soon...
+
+**Last Updated:** January 4, 2026  
+**Progress:** 4/12 Phases Complete (33%)
