@@ -2,120 +2,79 @@
 
 @layer base {
   :root {
-    /* Primary Brand Colors */
-    --color-primary-50: #f0f9ff;
-    --color-primary-100: #e0f2fe;
-    --color-primary-200: #bae6fd;
-    --color-primary-300: #7dd3fc;
-    --color-primary-400: #38bdf8;
-    --color-primary-500: #0ea5e9;
-    --color-primary-600: #0284c7;
-    --color-primary-700: #0369a1;
-    --color-primary-800: #075985;
-    --color-primary-900: #0c4a6e;
-  }
-}
-
-@layer utilities {
-  /* Custom Button Styles */
-  .btn-primary {
-    @apply px-6 py-3 bg-sky-600 text-white rounded-lg font-semibold hover:bg-sky-700 transition-colors;
-  }
-  
-  .btn-secondary {
-    @apply px-6 py-3 bg-gray-200 text-gray-800 rounded-lg font-semibold hover:bg-gray-300 transition-colors;
-  }
-  
-  /* Card Styles */
-  .card {
-    @apply bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow;
-  }
-}
-
-/* Override any primary color references to use sky instead */
-@layer components {
-  .text-primary-600 {
-    @apply text-sky-600;
-  }
-  
-  .bg-primary-600 {
-    @apply bg-sky-600;
-  }
-  
-  .border-primary-500 {
-    @apply border-sky-500;
-  }
-  
-  .hover\:text-primary-600:hover {
-    @apply hover:text-sky-600;
-  }
-  
-  .focus\:ring-primary-500:focus {
-    @apply focus:ring-sky-500;
-  }
-  
-  .focus\:border-primary-500:focus {
-    @apply focus:border-sky-500;
-  }
-}
-
-/* Custom Design Tokens for Premium EU Market */
-@layer base {
-  :root {
-    /* Primary Brand Colors - Professional & Trustworthy */
-    --color-primary-50: #eff6ff;
-    --color-primary-100: #dbeafe;
-    --color-primary-500: #3b82f6;
-    --color-primary-600: #2563eb;
-    --color-primary-700: #1d4ed8;
-    
-    /* Neutral Palette - Minimal & Clean */
-    --color-gray-50: #f9fafb;
-    --color-gray-100: #f3f4f6;
-    --color-gray-200: #e5e7eb;
-    --color-gray-300: #d1d5db;
-    --color-gray-900: #111827;
-    
-    /* Success/Error States */
-    --color-success: #10b981;
-    --color-error: #ef4444;
-    --color-warning: #f59e0b;
-    
-    /* Typography */
+    /* Use Tailwind's built-in colors - sky for primary */
     --font-primary: 'Inter', system-ui, -apple-system, sans-serif;
-    --font-heading: 'Plus Jakarta Sans', Inter, sans-serif;
   }
-  
+
   * {
     @apply border-gray-200;
   }
-  
+
   body {
     @apply bg-gray-50 text-gray-900 antialiased;
     font-family: var(--font-primary);
   }
-  
-  h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-heading);
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-semibold;
   }
 }
 
-/* Premium UI Components */
 @layer components {
-  .btn-primary {
-    @apply bg-primary-500 text-white px-6 py-3 rounded-lg font-medium;
-    @apply hover:bg-primary-600 transition-all duration-300;
-    @apply focus:ring-4 focus:ring-primary-500/20 focus:outline-none;
+
+  /* Map primary colors to sky (Tailwind's built-in blue) */
+  .text-primary-600 {
+    @apply text-sky-600;
   }
-  
+
+  .bg-primary-500 {
+    @apply bg-sky-500;
+  }
+
+  .bg-primary-600 {
+    @apply bg-sky-600;
+  }
+
+  .hover\:bg-primary-600:hover {
+    @apply hover:bg-sky-600;
+  }
+
+  .border-primary-500 {
+    @apply border-sky-500;
+  }
+
+  .focus\:ring-primary-500:focus {
+    @apply focus:ring-sky-500;
+  }
+
+  .focus\:border-primary-500:focus {
+    @apply focus:border-sky-500;
+  }
+
+  /* Button Styles */
+  .btn-primary {
+    @apply px-6 py-3 bg-sky-600 text-white rounded-lg font-semibold;
+    @apply hover:bg-sky-700 transition-colors;
+    @apply focus:ring-4 focus:ring-sky-500/20 focus:outline-none;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 bg-gray-200 text-gray-800 rounded-lg font-semibold;
+    @apply hover:bg-gray-300 transition-colors;
+  }
+
+  /* Card Style */
   .card {
     @apply bg-white rounded-xl shadow-sm border border-gray-100;
     @apply hover:shadow-md transition-shadow duration-300;
   }
 }
 
-/* Animations */
 @layer utilities {
   .animate-fade-in {
     animation: fadeIn 0.5s ease-in-out;
@@ -123,6 +82,11 @@
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
