@@ -21,6 +21,7 @@ interface Trainer {
 }
 
 function TrainerMarketplace() {
+    // @ts-ignore - setTrainers will be used when API is integrated
     const [trainers, setTrainers] = useState<Trainer[]>([]);
     const [loading, setLoading] = useState(true);
     const [filters, setFilters] = useState({
