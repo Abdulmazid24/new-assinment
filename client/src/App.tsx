@@ -7,6 +7,10 @@ import About from './pages/public/About';
 import Contact from './pages/public/Contact';
 import Login from './pages/auth/Login';
 import Register from './pages/auth/Register';
+import ClientDashboard from './pages/dashboard/ClientDashboard';
+import TrainerDashboard from './pages/dashboard/TrainerDashboard';
+import AdminDashboard from './pages/dashboard/AdminDashboard';
+import GDPRSettings from './pages/settings/GDPRSettings';
 
 function App() {
     return (
@@ -23,6 +27,14 @@ function App() {
                     {/* Auth Routes */}
                     <Route path="/login" element={<Login />} />
                     <Route path="/register" element={<Register />} />
+
+                    {/* Dashboard Routes (Protected - will add auth check later) */}
+                    <Route path="/dashboard/client" element={<ClientDashboard />} />
+                    <Route path="/dashboard/trainer" element={<TrainerDashboard />} />
+                    <Route path="/dashboard/admin" element={<AdminDashboard />} />
+
+                    {/* Settings Routes */}
+                    <Route path="/settings/gdpr" element={<GDPRSettings />} />
                 </Routes>
             </Layout>
         </Router>
